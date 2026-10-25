@@ -57,4 +57,4 @@ jobs:
           app-name: 'jtkc-daily-briefing'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_3FC0BB2E5EA5467685F91923CF4AD408 }}
+          publish-profile: 'jtkc-daily-briefing - Web Deploy'
