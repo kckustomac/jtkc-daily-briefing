@@ -1,0 +1,320 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>KC Daily Briefing</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: single reading column of section blocks on a cool morning-sky ground; family stats as a wide table */
+:root{
+  --bg:#eef2f5; --surface:#ffffff; --ink:#15232e; --muted:#566673; --line:#d5dee5;
+  --accent:#0d7480; --accent-soft:#d9eef0; --warm:#b5651d; --up:#1e7a45; --down:#b0352b;
+  --grad:linear-gradient(160deg,#e3edf3 0%,#eef2f5 45%,#f3efe9 100%);
+  --display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
+  --body:"Atkinson Hyperlegible",ui-sans-serif,system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0f1820; --surface:#16222c; --ink:#e4ecf1; --muted:#93a4b1; --line:#26353f;
+  --accent:#4cc3cf; --accent-soft:#163a40; --warm:#e8a35f; --up:#5fcf8c; --down:#f0837a;
+  --grad:linear-gradient(160deg,#112130 0%,#0f1820 50%,#18171a 100%); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1820; --surface:#16222c; --ink:#e4ecf1; --muted:#93a4b1; --line:#26353f;
+  --accent:#4cc3cf; --accent-soft:#163a40; --warm:#e8a35f; --up:#5fcf8c; --down:#f0837a;
+  --grad:linear-gradient(160deg,#112130 0%,#0f1820 50%,#18171a 100%); color-scheme:dark}
+body{background:var(--bg);background-image:var(--grad);background-attachment:fixed;color:var(--ink);font:16px/1.6 var(--body)}
+.wrap{max-width:860px;margin:0 auto;padding-block:40px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:28px}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.15}
+header.top{display:grid;gap:10px;padding-bottom:8px}
+.eyebrow{font:600 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+h1{font-size:clamp(34px,6vw,52px);font-weight:700;letter-spacing:-.02em}
+.datebar{display:flex;flex-wrap:wrap;gap:8px 18px;font:13px/1.4 var(--mono);color:var(--muted)}
+.datebar b{color:var(--ink);font-weight:600}
+section{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px 22px 24px;display:grid;gap:14px;min-width:0}
+.sh{display:flex;align-items:center;gap:12px}
+.ic{width:36px;height:36px;border-radius:10px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;flex:none}
+.ic svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+h2{font-size:22px;font-weight:700}
+.kicker{font-size:13px;color:var(--muted)}
+p{margin:0;max-width:68ch}
+.src{font-size:13px;color:var(--muted)}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;min-width:640px;font-variant-numeric:tabular-nums}
+th,td{padding:10px 12px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
+th:first-child,td:first-child,th:nth-child(2),td:nth-child(2),th:last-child,td:last-child{text-align:left}
+th{font:600 11px/1.2 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:var(--bg)}
+tr:last-child td{border-bottom:0}
+td.name{font-weight:700}
+.bar{display:inline-block;vertical-align:middle;width:64px;height:6px;border-radius:3px;background:var(--line);margin-left:8px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--accent)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.stat{border:1px solid var(--line);border-radius:10px;padding:12px 14px;display:grid;gap:2px}
+.stat .k{font:600 11px/1.2 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.stat .v{font:700 26px/1.2 var(--display);font-variant-numeric:tabular-nums}
+.stat .v.warm{color:var(--warm)}
+.week{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px;font-variant-numeric:tabular-nums}
+.day{text-align:center;padding:8px 2px;border-radius:8px;background:var(--bg);font-size:13px;display:grid;gap:2px}
+.day b{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--muted)}
+.day .hi{font-weight:700}
+.day .pc{font-size:11px;color:var(--accent)}
+@media (max-width:520px){.week{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.news{display:grid;gap:16px}
+.news article{display:grid;gap:4px;padding-top:14px;border-top:1px solid var(--line)}
+.news article:first-child{border-top:0;padding-top:0}
+h3{font-size:17px;font-weight:700}
+ol.chart{list-style:none;margin:0;padding:0;display:grid;gap:2px;font-variant-numeric:tabular-nums}
+ol.chart li{display:grid;grid-template-columns:32px 1fr auto;gap:10px;align-items:baseline;padding:8px 0;border-bottom:1px solid var(--line)}
+ol.chart li:last-child{border-bottom:0}
+.rk{font:700 18px/1 var(--display);color:var(--accent)}
+.song{min-width:0}.song b{display:block}.song span{color:var(--muted);font-size:14px}
+.mv{font:600 12px/1 var(--mono)}.mv.up{color:var(--up)}.mv.dn{color:var(--down)}.mv.eq{color:var(--muted)}
+.signs{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.sign{border:1px solid var(--line);border-radius:10px;padding:12px 14px;display:grid;gap:4px;align-content:start}
+.sign .who{font:600 11px/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.sign p{font-size:14px}
+.callout{background:var(--accent-soft);border-radius:10px;padding:14px 16px;display:grid;gap:8px}
+.closing{font:600 19px/1.4 var(--display);color:var(--accent)}
+ul.plain{margin:0;padding-left:20px;display:grid;gap:6px}
+.logbox{display:grid;gap:12px}
+.toggle{justify-self:start;font:600 14px/1 var(--body);color:var(--accent);background:transparent;border:1.5px solid var(--accent);border-radius:999px;padding:10px 18px;cursor:pointer}
+.toggle:hover{background:var(--accent-soft)}
+pre.log{margin:0;overflow-x:auto;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:16px;font:12.5px/1.55 var(--mono);color:var(--ink);white-space:pre}
+footer{font:12px/1.5 var(--mono);color:var(--muted);text-align:center}
+</style>
+
+<div class="wrap">
+<header class="top">
+  <div class="eyebrow">KC Daily News Briefing · 66106</div>
+  <h1>Sunday, October 25, 2026</h1>
+  <div class="datebar">
+    <span>UTC <b>09:56</b></span>
+    <span>Julian Day <b>2461338.91</b></span>
+    <span>Day <b>298</b> of 365</span>
+    <span>Roman <b>XXV · X · MMXXVI</b></span>
+  </div>
+</header>
+
+<section aria-labelledby="h-family">
+  <div class="sh"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M2.5 20c.6-3.4 2.8-5.5 5.5-5.5s4.9 2.1 5.5 5.5M13.5 16c.8-1.4 2-2.2 3.5-2.2 2.3 0 4 1.8 4.5 4.7"/></svg></div>
+  <div><h2 id="h-family">Family Fun</h2><div class="kicker">Lifetime meter, assuming everyone makes it to 80. Blaze is graded on the human scale, which is generous.</div></div></div>
+  <div class="tbl"><table>
+    <thead><tr><th>Name</th><th>Born</th><th>% Lived</th><th>Days</th><th>Weeks</th><th>Months</th><th>Sign</th></tr></thead>
+    <tbody><tr><td class="name">Jerrod</td><td>May 13, 1990</td><td>45.56%<span class="bar"><i style="width:45.6%"></i></span></td><td>13,314</td><td>1,902</td><td>437</td><td>Taurus</td></tr><tr><td class="name">Jacob</td><td>February 7, 1994</td><td>40.89%<span class="bar"><i style="width:40.9%"></i></span></td><td>11,948</td><td>1,706</td><td>392</td><td>Aquarius</td></tr><tr><td class="name">Joshua</td><td>April 4, 2005</td><td>26.95%<span class="bar"><i style="width:26.9%"></i></span></td><td>7,874</td><td>1,124</td><td>258</td><td>Aries</td></tr><tr><td class="name">Crystal</td><td>September 15, 1989</td><td>46.39%<span class="bar"><i style="width:46.4%"></i></span></td><td>13,554</td><td>1,936</td><td>445</td><td>Virgo</td></tr><tr><td class="name">Jayden</td><td>June 19, 2015</td><td>14.19%<span class="bar"><i style="width:14.2%"></i></span></td><td>4,146</td><td>592</td><td>136</td><td>Gemini</td></tr><tr><td class="name">Jackson</td><td>December 8, 2023</td><td>3.60%<span class="bar"><i style="width:3.6%"></i></span></td><td>1,052</td><td>150</td><td>34</td><td>Sagittarius</td></tr><tr><td class="name">Julianna</td><td>October 3, 2025</td><td>1.32%<span class="bar"><i style="width:1.3%"></i></span></td><td>387</td><td>55</td><td>12</td><td>Libra</td></tr><tr><td class="name">Josette</td><td>January 23, 2026</td><td>0.94%<span class="bar"><i style="width:0.9%"></i></span></td><td>275</td><td>39</td><td>9</td><td>Aquarius</td></tr><tr><td class="name">Stephanie</td><td>August 9, 1969</td><td>71.51%<span class="bar"><i style="width:71.5%"></i></span></td><td>20,896</td><td>2,985</td><td>686</td><td>Leo</td></tr><tr><td class="name">Blaze (dog)</td><td>December 25, 2017</td><td>11.04%<span class="bar"><i style="width:11.0%"></i></span></td><td>3,226</td><td>460</td><td>106</td><td>Capricorn</td></tr></tbody>
+  </table></div>
+  <p class="src">Computed by script from the household roster. Check passed: on 2026-07-10 Jerrod sits at 45.20% / 13,207 days / 1,886 weeks / 433 months.</p>
+</section>
+
+<section aria-labelledby="h-otd">
+  <div class="sh"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg></div>
+  <div><h2 id="h-otd">On This Day</h2><div class="kicker">October 25, 2001</div></div></div>
+  <p><b>Windows XP goes on sale.</b> Microsoft launched Windows XP 25 years ago today, merging its consumer and business lines onto the NT kernel. That green "Bliss" hill became the most-seen photo on Earth, and plenty of factory floors and ATMs kept running XP for well over a decade after.</p>
+  <p class="src"><a href="https://en.wikipedia.org/wiki/Windows_XP">Read more: Windows XP</a></p>
+</section>
+
+<section aria-labelledby="h-wx">
+  <div class="sh"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="9" r="3.5"/><path d="M9 2v1.5M2 9h1.5M4 4l1 1M14 4l-1 1M8 20h9a3.5 3.5 0 0 0 0-7 5 5 0 0 0-9.4 1.6A2.7 2.7 0 0 0 8 20z"/></svg></div>
+  <div><h2 id="h-wx">Kansas City Weather</h2><div class="kicker">66106 · Kansas City, KS</div></div></div>
+  <div class="stats">
+    <div class="stat"><span class="k">High</span><span class="v warm">80°F</span></div>
+    <div class="stat"><span class="k">Low</span><span class="v">54°F</span></div>
+    <div class="stat"><span class="k">Rain chance</span><span class="v">10%</span></div>
+    <div class="stat"><span class="k">Right now</span><span class="v">57° cloudy</span></div>
+  </div>
+  <p>Shorts weather in late October. Clouds early give way to a summery afternoon, nearly 20 degrees above a typical KC late-October high. No weather alerts were returned. The warmth holds through Monday; Tuesday cools to 69° with the week's first real rain chance, and Halloween looks cooler with a 40% chance of showers for trick-or-treaters.</p>
+  <div class="week" aria-label="Seven-day outlook">
+    <div class="day"><b>SUN</b><span class="hi">80°</span><span>54°</span><span class="pc">10%</span></div>
+    <div class="day"><b>MON</b><span class="hi">78°</span><span>56°</span><span class="pc">10%</span></div>
+    <div class="day"><b>TUE</b><span class="hi">69°</span><span>58°</span><span class="pc">35%</span></div>
+    <div class="day"><b>WED</b><span class="hi">78°</span><span>58°</span><span class="pc">0%</span></div>
+    <div class="day"><b>THU</b><span class="hi">77°</span><span>61°</span><span class="pc">15%</span></div>
+    <div class="day"><b>FRI</b><span class="hi">74°</span><span>58°</span><span class="pc">20%</span></div>
+    <div class="day"><b>SAT</b><span class="hi">68°</span><span>58°</span><span class="pc">40%</span></div>
+  </div>
+  <p class="src">Forecast feed fetched 09:58 UTC. Matches KCTV5's <a href="https://www.kctv5.com/video/2026/10/24/spectacularly-warm-late-october-weekend/">"spectacularly warm late October weekend"</a> outlook.</p>
+</section>
+
+<section aria-labelledby="h-gas">
+  <div class="sh"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 20V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v15M3 20h12M4 10h10M14 8l3 2v7a1.5 1.5 0 0 0 3 0V9l-3-3"/></svg></div>
+  <div><h2 id="h-gas">Gas Prices</h2><div class="kicker">Regular unleaded · KC metro, Kansas side</div></div></div>
+  <div class="stats">
+    <div class="stat"><span class="k">Per gallon</span><span class="v warm">$3.92</span></div>
+    <div class="stat"><span class="k">14-gal fill-up</span><span class="v">$54.93</span></div>
+    <div class="stat"><span class="k">Kansas avg</span><span class="v">$3.95</span></div>
+    <div class="stat"><span class="k">U.S. avg</span><span class="v">$4.30</span></div>
+  </div>
+  <p>KCK is pumping about 37 cents under the national average, so a full tank here saves around five bucks compared with the typical American fill-up.</p>
+  <p class="src">AAA, as of Oct 24, 2026 ($3.924 × 14 gal). <a href="https://gasprices.aaa.com/?state=KS">gasprices.aaa.com</a></p>
+</section>
+
+<section aria-labelledby="h-local">
+  <div class="sh"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg></div>
+  <div><h2 id="h-local">Local Headlines</h2><div class="kicker">Kansas City, last day or so</div></div></div>
+  <div class="news">
+    <article>
+      <h3>Wyandotte County and Kansas settle Chiefs stadium dispute</h3>
+      <p>The Unified Government will drop its lawsuit against the state. The stadium and parking become state facilities owned by the Kansas Sports Facilities Authority and leased to the Chiefs for $7 million a year, while the UG and BPU keep zoning control over surrounding development.</p>
+      <p class="src">KSHB 41 · Oct 23 · <a href="https://www.kshb.com/news/local-news/kansas/wyandotte-county/unified-government-and-kansas-resolve-concerns-over-chiefs-stadium-project">Read story</a></p>
+    </article>
+    <article>
+      <h3>Police search for missing 3-year-old Kevari Wilson</h3>
+      <p>KCPD is asking for help finding the boy, last seen around 3:30 p.m. Thursday near East 103rd Terrace and Skiles Avenue. Anyone with information should call 911 or KCPD's Missing Persons Unit.</p>
+      <p class="src">KSHB 41 · Oct 24 · <a href="https://www.kshb.com/news/local-news/police-searching-for-missing-3-year-old-kansas-city-missouri-boy">Read story</a></p>
+    </article>
+    <article>
+      <h3>Sea of pink fills Kansas City for Making Strides walk</h3>
+      <p>Thousands turned out Saturday for the American Cancer Society's breast cancer walk. The crowd honored former KSHB anchor Cynthia Newsome and celebrated reporter Alyssa Jackson, now cancer-free.</p>
+      <p class="src">KSHB 41 · Oct 24 · <a href="https://www.kshb.com/news/local-news/missouri/kansas-city/sea-of-pink-fills-kansas-city-for-breast-cancer-awareness-fundraising-walk">Read story</a></p>
+    </article>
+  </div>
+</section>
+
+<section aria-labelledby="h-nat">
+  <div class="sh"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21v-9M9.5 21v-9M14.5 21v-9M19 21v-9M3 12h18L12 4z"/></svg></div>
+  <div><h2 id="h-nat">National Update</h2><div class="kicker">Nine days to the midterms</div></div></div>
+  <h3>On C-SPAN's Campaign 2026 lineup</h3>
+  <ul class="plain">
+    <li><a href="https://www.c-span.org/program/campaign-2026/wisconsin-gubernatorial-debate/686857">Wisconsin Gubernatorial Debate</a></li>
+    <li><a href="https://www.c-span.org/program/campaign-2026/alaska-us-senate-debate/686569">Alaska U.S. Senate Debate</a></li>
+    <li><a href="https://c-span.org/program/campaign-2026/trump-delivers-remarks-at-sioux-city-iowa-rally/686882">Trump Delivers Remarks at Sioux City, Iowa Rally</a></li>
+  </ul>
+  <div class="callout">
+    <p><b>Congress:</b> Both chambers are out campaigning ahead of the Nov. 3 election. When they come back, the clock is tight: government funding runs out <b>Dec. 11</b>. They still have to pass FY2027 spending (the House has passed 3 of 12 bills), finish the defense bill, settle the farm bill (SNAP cost-sharing is the sticking point), and decide on permitting reform. Health extenders lapse Dec. 31.</p>
+    <p><b>Supreme Court:</b> The October sitting covered whether Boulder can sue oil companies over climate damage under state law (<i>Suncor v. Boulder County</i>), whether a 1988 video-privacy law protects newsletter subscribers (<i>Salazar v. Paramount</i>), and how hard it should be for workers to challenge 401(k) investment choices (<i>Anderson v. Intel</i>).</p>
+  </div>
+  <p class="src">Sources: c-span.org program listings, <a href="https://www.hklaw.com/en/insights/publications/2026/10/beyond-the-midterms-congress-faces-converging-year-end-deadlines">Holland &amp; Knight</a>, <a href="https://nolabels.org/the-latest/what-the-supreme-court-heard-in-october-2026/">No Labels SCOTUS recap</a>. C-SPAN's live pages couldn't be loaded this morning, so the headlines are listing titles only.</p>
+</section>
+
+<section aria-labelledby="h-bb">
+  <div class="sh"><div class="ic"><svg viewBox="0 0 24 24"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg></div>
+  <div><h2 id="h-bb">Billboard Hot 100 Top 10</h2><div class="kicker">Chart dated Oct 24, 2026 (next chart drops Tuesday)</div></div></div>
+  <ol class="chart">
+    <li><span class="rk">1</span><span class="song"><b>Patient Zero</b><span>Taylor Swift</span></span><span class="mv eq">—</span></li>
+    <li><span class="rk">2</span><span class="song"><b>Choosin' Texas</b><span>Ella Langley</span></span><span class="mv eq">—</span></li>
+    <li><span class="rk">3</span><span class="song"><b>Boston</b><span>Stella Lefty</span></span><span class="mv eq">—</span></li>
+    <li><span class="rk">4</span><span class="song"><b>Been By Now</b><span>Morgan Wallen</span></span><span class="mv eq">—</span></li>
+    <li><span class="rk">5</span><span class="song"><b>Dracula</b><span>Tame Impala &amp; JENNIE</span></span><span class="mv up">▲1</span></li>
+    <li><span class="rk">6</span><span class="song"><b>Nicole Kidman</b><span>ADÉLA</span></span><span class="mv up">▲3</span></li>
+    <li><span class="rk">7</span><span class="song"><b>Hate That I Made You Love Me</b><span>Ariana Grande</span></span><span class="mv eq">—</span></li>
+    <li><span class="rk">8</span><span class="song"><b>Stupid Song</b><span>Olivia Rodrigo</span></span><span class="mv eq">—</span></li>
+    <li><span class="rk">9</span><span class="song"><b>BbY WOW</b><span>Karol G with Judeline &amp; rusowsky</span></span><span class="mv up">▲1</span></li>
+    <li><span class="rk">10</span><span class="song"><b>Babydoll</b><span>Dominic Fike</span></span><span class="mv up">▲3</span></li>
+  </ol>
+  <p class="src"><a href="https://ca.billboard.com/charts/hot-100/2026-10-24">billboard.com Hot 100, Oct 24, 2026</a>. "Choosin' Texas" just passed a full year on the chart.</p>
+</section>
+
+<section aria-labelledby="h-stars">
+  <div class="sh"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.5 6.7 19.4l1.2-6L3.4 9.3l6-.7z"/></svg></div>
+  <div><h2 id="h-stars">Horoscope Clashes &amp; Symmetries</h2><div class="kicker">Relationship forecast for the whole crew</div></div></div>
+  <div class="signs">
+    <div class="sign"><span class="who">Jerrod · Taurus</span><p>Think about what makes you feel safe and appreciated. An old connection might deserve another look.</p></div>
+    <div class="sign"><span class="who">Crystal · Virgo</span><p>Drop the pressure to make every moment flawless. Enjoy it without overanalyzing every text.</p></div>
+    <div class="sign"><span class="who">Jacob &amp; Josette · Aquarius</span><p>Balance independence with openness. Josette has already mastered this: total independence, completely open feelings, at full volume.</p></div>
+    <div class="sign"><span class="who">Joshua · Aries</span><p>Stay open alongside that confidence. A direct conversation could point you somewhere new.</p></div>
+    <div class="sign"><span class="who">Jayden · Gemini</span><p>Choose your words thoughtfully and let a good conversation grow at its own pace.</p></div>
+    <div class="sign"><span class="who">Jackson · Sagittarius</span><p>Make room for depth alongside your love of freedom. Translation for a toddler: one more hug before sprinting off.</p></div>
+    <div class="sign"><span class="who">Julianna · Libra</span><p>Venus retrograde has you rethinking fairness. Expect firm opinions on who gets the last cracker.</p></div>
+    <div class="sign"><span class="who">Stephanie · Leo</span><p>Warmth, generosity and real curiosity about other people's perspective make every connection stronger today.</p></div>
+    <div class="sign"><span class="who">Blaze · Capricorn</span><p>Make sure your actions show the affection you feel. Blaze is the only one in the house who already does this daily, mostly with his tail.</p></div>
+  </div>
+  <div class="callout">
+    <p><b>Clash to watch:</b> Joshua's Aries directness meets Julianna's Libra fairness audit. They're opposite signs, so if they agree on anything, it's binding.</p>
+    <p><b>Symmetry:</b> Crystal and Jayden got the same message from different angles: say it thoughtfully, then stop replaying it. Jerrod and Julianna share a theme too, both revisiting something from the past.</p>
+    <p><b>Freedom club:</b> Jacob, Josette and Jackson are all asked to balance independence with closeness. Stephanie's Leo warmth is the tiebreaker that brings everyone back to the table.</p>
+    <p class="closing">Eighty-degree weather in late October, ten people and one good dog. Go enjoy it.</p>
+  </div>
+  <p class="src"><a href="https://storizen.com/web-stories/daily-love-horoscope-october-25-2026/">Storizen Daily Love Horoscope, Oct 25, 2026</a></p>
+</section>
+
+<section aria-labelledby="h-log" class="logbox">
+  <div class="sh"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9l3 3-3 3M12 15h5"/></svg></div>
+  <div><h2 id="h-log">System Log</h2><div class="kicker">Run audit · overall health YELLOW, 9/9 tasks complete</div></div></div>
+  <button class="toggle" id="logToggle" type="button" aria-expanded="false" aria-controls="logBody">Show System Log</button>
+  <pre class="log" id="logBody" hidden>=== KC DAILY NEWS BRIEFING SYSLOG — 2026-10-25 ===
+
+[TASK 01 — DATE HEADER] 2026-10-25T09:58:54Z
+  status: OK
+  source: system clock (UTC)
+  current_date: 2026-10-25 | run_started_utc: 2026-10-25T09:56:15Z | tz: America/Chicago
+  julian_date: JD 2461338.91 | day_of_year: 298 | roman: XXV · X · MMXXVI
+  artifacts: ./state/run-state.json written; log created
+  health: GREEN
+
+[TASK 02 — FAMILY FUN] 2026-10-25T09:58:54Z
+  status: OK
+  method: Python script, date arithmetic only; no web lookups
+  rules: days=(current-dob); weeks=floor(days/7); months=full calendar months; %lived=days/days_to_80th_birthday
+  verification: anchor 2026-07-10 Jerrod -&gt; 45.20% / 13,207 d / 1,886 wk / 433 mo — MATCH
+  rows: 10/10 roster entries computed
+  issues: none
+  health: GREEN
+
+[TASK 03 — ON THIS DAY] 2026-10-25T09:58:54Z
+  status: OK
+  event: 2001-10-25 Microsoft releases Windows XP (tech)
+  link: https://en.wikipedia.org/wiki/Windows_XP
+  note: general &#x27;on this day&#x27; search returned low-quality pages; event selected from well-established record
+  health: GREEN
+
+[TASK 04 — WEATHER 66106] 2026-10-25T09:58:54Z
+  status: OK
+  source: weather widget feed (lat 39.0686, lon -94.6716), fetched 2026-10-25T09:58:54Z
+  today: high 80°F / low 54°F, cloudy start, 10% rain
+  corroboration: KCTV5 &#x27;A spectacularly warm late October weekend&#x27; (2026-10-24)
+  alerts: none returned by feed; NWS not queried directly
+  health: GREEN
+
+[TASK 05 — GAS PRICES 66106] 2026-10-25T09:58:54Z
+  status: OK
+  source: AAA gasprices.aaa.com (Kansas City, KS-only metro), as of 2026-10-24
+  regular: $3.924/gal | KS avg $3.952 | US avg $4.296
+  fill_14gal: 14 x 3.9237 = $54.93
+  health: GREEN
+
+[TASK 06 — LOCAL HEADLINES] 2026-10-25T09:58:54Z
+  status: OK (with note)
+  sources: kshb.com x3 (only allowed source reachable with timestamps)
+  stories: Chiefs stadium UG/state deal (10-23 20:30 EDT); missing 3-yr-old Kevari Wilson (10-24 19:11 EDT); Making Strides walk (10-24 17:55 EDT)
+  issues: fox4kc.com/news returned stale cache; restricted-domain search for KC Star/KCUR/KCTV5 rejected by search proxy
+  note: Chiefs story ~33h old, slightly outside 24h window
+  health: YELLOW
+
+[TASK 07 — NATIONAL UPDATE] 2026-10-25T09:58:54Z
+  status: PARTIAL
+  c-span.org: homepage fetch returned stale cached copy; program pages returned client errors
+  headlines: taken from c-span.org Campaign 2026 listings surfaced via search (titles only, air dates not verified)
+  agenda context: Holland &amp; Knight (2026-10-09) — CR expires 2026-12-11; midterms 2026-11-03
+  courts: No Labels recap of Supreme Court October 2026 sitting
+  health: YELLOW
+
+[TASK 08 — BILLBOARD TOP 10] 2026-10-25T09:58:54Z
+  status: OK
+  chart: Hot 100 dated 2026-10-24 (latest published; 10-31 chart releases ~10-27)
+  source: ca.billboard.com/charts/hot-100/2026-10-24
+  movement: computed from last-week column
+  health: GREEN
+
+[TASK 09 — HOROSCOPES] 2026-10-25T09:58:54Z
+  status: OK
+  source: Storizen Daily Love Horoscope, 2026-10-25 (9 signs)
+  clashes/symmetries: identified; personalized for 10 roster members incl. Blaze
+  health: GREEN
+
+[TASK 10 — RUN AUDIT] 2026-10-25T09:58:54Z
+  tasks_completed: 9/9 (+ audit)
+  missing_stages: none
+  overall_health: YELLOW — two sections ran on degraded sources
+  notes: c-span.org pages not fetchable live; local news limited to KSHB; weather alerts not cross-checked with NWS
+  improvements: add direct NWS alerts API; allowlist c-span.org + fox4kc RSS feeds; cache KC Star RSS
+  finished_utc: 2026-10-25T09:58:54Z
+</pre>
+</section>
+
+<footer>Generated by the KC Daily News Briefing single-orchestrated pipeline · 2026-10-25</footer>
+</div>
+<script>
+(function(){var b=document.getElementById('logToggle'),l=document.getElementById('logBody');
+b.addEventListener('click',function(){var o=l.hidden;l.hidden=!o;b.setAttribute('aria-expanded',String(o));b.textContent=o?'Hide System Log':'Show System Log';});})();
+</script>
+
+</body></html>
