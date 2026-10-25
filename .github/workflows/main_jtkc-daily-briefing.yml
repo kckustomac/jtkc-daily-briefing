@@ -6,7 +6,7 @@ name: Build and deploy PHP app to Azure Web App - jtkc-daily-briefing
 on:
   push:
     branches:
-      - 'main'
+      - 'master'
   workflow_dispatch:
 
 jobs:
@@ -57,4 +57,4 @@ jobs:
           app-name: 'jtkc-daily-briefing'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_9275EF5E01B04AF5BD22772FF73A7237 }}
+          publish-profile: 'jtkc-daily-briefing - Web Deploy'
