@@ -2,10 +2,707 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>KC Daily Briefing 2026-11-22</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>▰▰▰ [ FL0B0T | 📅 ] ▰▰▰</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<!--
+  KC DAILY NEWS BRIEFING — TEMPLATE
+  Every token has the form JTKC placeholder token (trailing ## included).
+  Replace each whole token, including both ## ends. Values go in as-is, so
+  HTML-escape plain text first; *_CONTENT tokens and SYSLOG are the exceptions
+  noted below.
+
+  Token conventions
+    *_PCT          number with 2 decimals, no % sign (it is used in a CSS width too)
+    *_DAYS/WEEKS/MONTHS  formatted integers, e.g. 13,314
+    BBxx_MOVE_CLASS  up | dn | eq | new      BBxx_MOVE  ▲3 | ▼2 | — | NEW
+    BBxx_MOVE_LABEL  plain words for screen readers, e.g. "Up 3 spots"
+    GAS_TREND_CLASS  down (green ▼) | up (red ▲) | flat (grey —)
+    GAS_TREND_GLYPH  ▼ | ▲ | —     GAS_TREND_DELTA e.g. −$0.04
+    GAS_TREND_BASIS  "last week" | "yesterday"
+    WX_ALERT_CLASS   none | active   (active shows the alert in red)
+    WX_Dn_LABEL      short day name, e.g. SUN
+    KEYSTONE_CONTENT / QUOTES_CONTENT  raw HTML; suggested markup:
+      <div class="count"><span class="num">42</span><span class="unit">days</span></div><p>…</p>
+      <figure class="quote"><blockquote>…</blockquote><figcaption>— Name, context</figcaption></figure>
+    SYSLOG           full log text, HTML-escaped
+
+  Placeholders (202):
+  BB01_ARTIST
+  BB01_MOVE
+  BB01_MOVE_CLASS
+  BB01_MOVE_LABEL
+  BB01_TITLE
+  BB02_ARTIST
+  BB02_MOVE
+  BB02_MOVE_CLASS
+  BB02_MOVE_LABEL
+  BB02_TITLE
+  BB03_ARTIST
+  BB03_MOVE
+  BB03_MOVE_CLASS
+  BB03_MOVE_LABEL
+  BB03_TITLE
+  BB04_ARTIST
+  BB04_MOVE
+  BB04_MOVE_CLASS
+  BB04_MOVE_LABEL
+  BB04_TITLE
+  BB05_ARTIST
+  BB05_MOVE
+  BB05_MOVE_CLASS
+  BB05_MOVE_LABEL
+  BB05_TITLE
+  BB06_ARTIST
+  BB06_MOVE
+  BB06_MOVE_CLASS
+  BB06_MOVE_LABEL
+  BB06_TITLE
+  BB07_ARTIST
+  BB07_MOVE
+  BB07_MOVE_CLASS
+  BB07_MOVE_LABEL
+  BB07_TITLE
+  BB08_ARTIST
+  BB08_MOVE
+  BB08_MOVE_CLASS
+  BB08_MOVE_LABEL
+  BB08_TITLE
+  BB09_ARTIST
+  BB09_MOVE
+  BB09_MOVE_CLASS
+  BB09_MOVE_LABEL
+  BB09_TITLE
+  BB10_ARTIST
+  BB10_MOVE
+  BB10_MOVE_CLASS
+  BB10_MOVE_LABEL
+  BB10_TITLE
+  BB_CHART_WEEK
+  BB_SOURCE_NOTE
+  BLAZE_DAYS
+  BLAZE_MONTHS
+  BLAZE_PCT
+  BLAZE_WEEKS
+  CLOSING_LINE
+  CONGRESS_SUMMARY
+  COURTS_SUMMARY
+  CRYSTAL_DAYS
+  CRYSTAL_MONTHS
+  CRYSTAL_PCT
+  CRYSTAL_WEEKS
+  CSPAN1_TITLE
+  CSPAN1_URL
+  CSPAN2_TITLE
+  CSPAN2_URL
+  CSPAN3_TITLE
+  CSPAN3_URL
+  DATE_ISO
+  DATE_LONG
+  DAYS_IN_YEAR
+  DAY_OF_YEAR
+  FAMILY_VERIFICATION_NOTE
+  GAS_FILL_14
+  GAS_NARRATIVE
+  GAS_PRICE
+  GAS_PRIOR_PRICE
+  GAS_SOURCE_LINK_TEXT
+  GAS_SOURCE_NOTE
+  GAS_SOURCE_URL
+  GAS_STATE_AVG
+  GAS_TREND_BASIS
+  GAS_TREND_CLASS
+  GAS_TREND_DELTA
+  GAS_TREND_GLYPH
+  GAS_TREND_LABEL
+  GAS_US_AVG
+  HORO_BLAZE
+  HORO_CLASH
+  HORO_CRYSTAL
+  HORO_EXTRA
+  HORO_JACKSON
+  HORO_JACOB_JOSETTE
+  HORO_JAYDEN
+  HORO_JERROD
+  HORO_JOSHUA
+  HORO_JULIANNA
+  HORO_SOURCE_NOTE
+  HORO_STEPHANIE
+  HORO_SYMMETRY
+  JACKSON_DAYS
+  JACKSON_MONTHS
+  JACKSON_PCT
+  JACKSON_WEEKS
+  JACOB_DAYS
+  JACOB_MONTHS
+  JACOB_PCT
+  JACOB_WEEKS
+  JAYDEN_DAYS
+  JAYDEN_MONTHS
+  JAYDEN_PCT
+  JAYDEN_WEEKS
+  JERROD_DAYS
+  JERROD_MONTHS
+  JERROD_PCT
+  JERROD_WEEKS
+  JOSETTE_DAYS
+  JOSETTE_MONTHS
+  JOSETTE_PCT
+  JOSETTE_WEEKS
+  JOSHUA_DAYS
+  JOSHUA_MONTHS
+  JOSHUA_PCT
+  JOSHUA_WEEKS
+  JULIANNA_DAYS
+  JULIANNA_MONTHS
+  JULIANNA_PCT
+  JULIANNA_WEEKS
+  JULIAN_DAY
+  KEYSTONE_CONTENT
+  KEYSTONE_KICKER
+  LOCAL1_DATE
+  LOCAL1_HEADLINE
+  LOCAL1_SOURCE
+  LOCAL1_SUMMARY
+  LOCAL1_URL
+  LOCAL2_DATE
+  LOCAL2_HEADLINE
+  LOCAL2_SOURCE
+  LOCAL2_SUMMARY
+  LOCAL2_URL
+  LOCAL3_DATE
+  LOCAL3_HEADLINE
+  LOCAL3_SOURCE
+  LOCAL3_SUMMARY
+  LOCAL3_URL
+  NATIONAL_KICKER
+  NATIONAL_SOURCES
+  OTD_BODY
+  OTD_DATE
+  OTD_LINK_TEXT
+  OTD_TITLE
+  OTD_URL
+  QUOTES_CONTENT
+  QUOTES_KICKER
+  ROMAN_DATE
+  RUN_HEALTH
+  STEPHANIE_DAYS
+  STEPHANIE_MONTHS
+  STEPHANIE_PCT
+  STEPHANIE_WEEKS
+  SYSLOG
+  TASKS_COMPLETED
+  UTC_TIME
+  WX_ALERTS
+  WX_ALERT_CLASS
+  WX_D1_HIGH
+  WX_D1_LABEL
+  WX_D1_LOW
+  WX_D1_PRECIP
+  WX_D2_HIGH
+  WX_D2_LABEL
+  WX_D2_LOW
+  WX_D2_PRECIP
+  WX_D3_HIGH
+  WX_D3_LABEL
+  WX_D3_LOW
+  WX_D3_PRECIP
+  WX_D4_HIGH
+  WX_D4_LABEL
+  WX_D4_LOW
+  WX_D4_PRECIP
+  WX_D5_HIGH
+  WX_D5_LABEL
+  WX_D5_LOW
+  WX_D5_PRECIP
+  WX_D6_HIGH
+  WX_D6_LABEL
+  WX_D6_LOW
+  WX_D6_PRECIP
+  WX_D7_HIGH
+  WX_D7_LABEL
+  WX_D7_LOW
+  WX_D7_PRECIP
+  WX_NARRATIVE
+  WX_NOW_COND
+  WX_NOW_TEMP
+  WX_SOURCE_NOTE
+  WX_TODAY_HIGH
+  WX_TODAY_LOW
+  WX_TODAY_PRECIP
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Quicksand:wght@400;500;600;700&family=PT+Mono&display=swap">
+<style>
+/* Layout: single reading column of section blocks on a cool morning-sky ground; wide data as scrollable tables */
+:root{
+  --bg:#eef2f5; --surface:#ffffff; --ink:#15232e; --muted:#566673; --line:#d5dee5;
+  --accent:#0d7480; --accent-soft:#d9eef0; --warm:#b5651d; --cool:#2f6db5;
+  --up:#1e7a45; --down:#b0352b; --flat:#7a8893; --alert-bg:#fbe7e4;
+  --life-1:#00E5A0; --life-2:#FFB340; --life-3:#FF3D6A;
+  --grad:linear-gradient(160deg,#e3edf3 0%,#eef2f5 45%,#f3efe9 100%);
+  --display:"Poppins",ui-sans-serif,system-ui,sans-serif;
+  --body:"Quicksand",ui-sans-serif,system-ui,sans-serif;
+  --mono:"PT Mono",ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0f1820; --surface:#16222c; --ink:#e4ecf1; --muted:#93a4b1; --line:#26353f;
+  --accent:#4cc3cf; --accent-soft:#163a40; --warm:#e8a35f; --cool:#7fb2f0;
+  --up:#5fcf8c; --down:#f0837a; --flat:#8796a2; --alert-bg:#3a1f1d;
+  --grad:linear-gradient(160deg,#112130 0%,#0f1820 50%,#18171a 100%); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1820; --surface:#16222c; --ink:#e4ecf1; --muted:#93a4b1; --line:#26353f;
+  --accent:#4cc3cf; --accent-soft:#163a40; --warm:#e8a35f; --cool:#7fb2f0;
+  --up:#5fcf8c; --down:#f0837a; --flat:#8796a2; --alert-bg:#3a1f1d;
+  --grad:linear-gradient(160deg,#112130 0%,#0f1820 50%,#18171a 100%); color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+[hidden]{display:none!important}
+img{max-width:100%}
+body{margin:0;background:var(--bg);background-image:var(--grad);background-attachment:fixed;color:var(--ink);font:500 16px/1.6 var(--body)}
+.wrap{max-width:920px;margin:0 auto;padding-block:40px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:28px}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+b,strong{font-weight:700}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.2}
+header.top{display:grid;gap:10px;padding-bottom:8px}
+.eyebrow{font:12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+h1{font-size:clamp(30px,5.5vw,46px);font-weight:700;letter-spacing:-.01em}
+.datebar{display:flex;flex-wrap:wrap;gap:8px 18px;font:13px/1.4 var(--mono);color:var(--muted)}
+.datebar b{color:var(--ink);font-weight:400}
+section{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px 22px 24px;display:grid;gap:14px;min-width:0}
+.sh{display:flex;align-items:center;gap:12px}
+.ic{width:36px;height:36px;border-radius:10px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;flex:none}
+.ic svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+h2{font-size:21px;font-weight:600}
+h3{font-size:16px;font-weight:600}
+.kicker{font-size:13px;color:var(--muted)}
+p{margin:0;max-width:68ch}
+.src{font-size:13px;color:var(--muted)}
+
+/* tables */
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;min-width:640px;font-variant-numeric:tabular-nums}
+th,td{padding:10px 12px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
+th{font:11px/1.2 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:var(--bg)}
+tr:last-child td,tr:last-child th{border-bottom:0}
+.tbl:not(.wxw) th:first-child,.tbl:not(.wxw) td:first-child,.tbl:not(.wxw) th:nth-child(2),.tbl:not(.wxw) td:nth-child(2),.tbl:not(.wxw) th:nth-child(4),.tbl:not(.wxw) td:nth-child(4){text-align:left}
+td.name{font-weight:700}
+.tbl:not(.wxw) th,.tbl:not(.wxw) td{padding-left:10px;padding-right:10px}
+.bar{display:inline-block;vertical-align:middle;width:128px;height:6px;border-radius:3px;background:var(--line);margin-left:8px;overflow:hidden}
+/* % lived fill: three equal thirds blended green -> amber -> pink; gradient is sized to the full 128px track so the fill reveals the color for its position */
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--life-1) 0%,var(--life-1) 16.67%,var(--life-2) 50%,var(--life-3) 83.33%,var(--life-3) 100%);background-size:128px 100%;background-repeat:no-repeat}
+
+/* weather matrix: rows = measure, columns = day */
+table.wx{min-width:520px}
+table.wx th,table.wx td{text-align:center;padding:9px 8px}
+table.wx th.rowh{text-align:left;color:var(--ink);font:600 13px/1.2 var(--body);letter-spacing:0;text-transform:none;background:var(--bg);position:sticky;left:0}
+table.wx thead th.rowh{font:11px/1.2 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+table.wx th.rowh small{font:11px var(--mono);color:var(--muted);margin-left:2px}
+table.wx td.hi{font-weight:700;color:var(--warm)}
+table.wx td.lo{color:var(--cool)}
+table.wx td.pc{color:var(--accent)}
+.sw{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:8px;vertical-align:baseline}
+.sw-hi{background:var(--warm)}.sw-lo{background:var(--cool)}.sw-pc{background:var(--accent)}
+.alert{font-size:14px;border-radius:8px;padding:8px 12px;background:var(--bg);color:var(--muted)}
+.alert.active{background:var(--alert-bg);color:var(--down)}
+
+/* stat tiles */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.stat{border:1px solid var(--line);border-radius:10px;padding:12px 14px;display:grid;gap:2px;align-content:start}
+.stat .k{font:11px/1.2 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.stat .v{font:700 26px/1.25 var(--display);font-variant-numeric:tabular-nums}
+.stat .v.warm{color:var(--warm)}
+.v-row{display:flex;align-items:center;gap:10px}
+/* gas trend: big glyph that does not add height to the tile */
+.trend{font:700 34px/0 var(--display);height:0;display:flex;align-items:center}
+.trend.down,.delta.down{color:var(--up)}
+.trend.up,.delta.up{color:var(--down)}
+.trend.flat,.delta.flat{color:var(--flat)}
+.delta{font:12px/1.3 var(--mono)}
+
+/* keystone countdown + hero quotes */
+.keystone,.quotes{display:grid;gap:12px}
+.keystone .count{display:flex;align-items:baseline;gap:10px}
+.keystone .num{font:700 48px/1 var(--display);color:var(--accent);font-variant-numeric:tabular-nums}
+.keystone .unit{font:13px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+figure.quote{margin:0;padding:4px 0 4px 16px;border-left:3px solid var(--accent-soft);display:grid;gap:6px}
+figure.quote blockquote{margin:0;font:500 18px/1.5 var(--display);max-width:60ch}
+figure.quote figcaption{font-size:14px;color:var(--muted)}
+
+/* news */
+.news{display:grid;gap:16px}
+.news article{display:grid;gap:4px;padding-top:14px;border-top:1px solid var(--line)}
+.news article:first-child{border-top:0;padding-top:0}
+ul.plain{margin:0;padding-left:20px;display:grid;gap:6px}
+.callout{background:var(--accent-soft);border-radius:10px;padding:14px 16px;display:grid;gap:8px}
+
+/* billboard: movement indicator at 4x size, zero-height box so the row keeps its height */
+ol.chart{list-style:none;margin:0;padding:0;display:grid;gap:2px;font-variant-numeric:tabular-nums}
+ol.chart li{display:grid;grid-template-columns:32px minmax(0,1fr) auto;gap:12px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line)}
+ol.chart li:last-child{border-bottom:0}
+.rk{font:700 18px/1 var(--display);color:var(--accent)}
+.song{min-width:0}.song b{display:block;font-weight:700}.song span{color:var(--muted);font-size:14px}
+.mv{font:700 48px/0 var(--display);height:0;display:flex;align-items:center;justify-content:flex-end;white-space:nowrap;letter-spacing:-.02em}
+.mv.up{color:var(--up)}.mv.dn{color:var(--down)}.mv.eq{color:var(--flat)}.mv.new{color:var(--accent);font-size:28px}
+@media (max-width:480px){.mv{font-size:36px}.mv.new{font-size:20px}}
+
+/* horoscopes */
+.signs{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.sign{border:1px solid var(--line);border-radius:10px;padding:12px 14px;display:grid;gap:4px;align-content:start}
+.sign .who{font:11px/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.sign p{font-size:14px}
+.closing{font:600 18px/1.4 var(--display);color:var(--accent)}
+
+/* syslog */
+.logbox{display:grid;gap:12px}
+.toggle{justify-self:start;font:600 14px/1 var(--display);color:var(--accent);background:transparent;border:1.5px solid var(--accent);border-radius:999px;padding:10px 18px;cursor:pointer}
+.toggle:hover{background:var(--accent-soft)}
+pre.log{margin:0;overflow-x:auto;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:16px;font:12.5px/1.55 var(--mono);color:var(--ink);white-space:pre}
+footer{font:12px/1.5 var(--mono);color:var(--muted);text-align:center}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+</style>
 </head>
 <body>
-<h1>Sunday, November 22, 2026</h1>
-<p>Full briefing generated. Family, weather, gas, local news (KC Current NWSL champs), Billboard, etc.</p>
+<div class="wrap">
+<header class="top">
+  <div class="eyebrow">KC Daily News Briefing · 66106</div>
+  <h1>Sunday, November 22, 2026</h1>
+  <div class="datebar">
+    <span>UTC <b>10:33</b></span>
+    <span>Julian Day <b>2461366.94</b></span>
+    <span>Day <b>326</b> of 365</span>
+    <span>Roman <b>XXII · XI · MMXXVI</b></span>
+  </div>
+</header>
+
+<section aria-labelledby="h-family">
+  <div class="sh"><div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M2.5 20c.6-3.4 2.8-5.5 5.5-5.5s4.9 2.1 5.5 5.5M13.5 16c.8-1.4 2-2.2 3.5-2.2 2.3 0 4 1.8 4.5 4.7"/></svg></div>
+  <div><h2 id="h-family">Family Fun</h2><div class="kicker">Lifetime meter, assuming everyone makes it to 80. Blaze is graded on the human scale, which is generous.</div></div></div>
+  <div class="tbl"><table>
+    <thead><tr><th>Name</th><th>Born</th><th>% Lived</th><th>Sign</th><th>Months</th><th>Weeks</th><th>Days</th></tr></thead>
+    <tbody>
+        <tr><td class="name">Jerrod</td><td>May 13, 1990</td><td>45.66%<span class="bar"><i style="width:45.66%"></i></span></td><td>Taurus</td><td>438</td><td>1,906</td><td>13,342</td></tr>
+        <tr><td class="name">Jacob</td><td>February 7, 1994</td><td>40.99%<span class="bar"><i style="width:40.99%"></i></span></td><td>Aquarius</td><td>393</td><td>1,710</td><td>11,976</td></tr>
+        <tr><td class="name">Joshua</td><td>April 4, 2005</td><td>27.04%<span class="bar"><i style="width:27.04%"></i></span></td><td>Aries</td><td>259</td><td>1,128</td><td>7,902</td></tr>
+        <tr><td class="name">Crystal</td><td>September 15, 1989</td><td>46.48%<span class="bar"><i style="width:46.48%"></i></span></td><td>Virgo</td><td>446</td><td>1,940</td><td>13,582</td></tr>
+        <tr><td class="name">Jayden</td><td>June 19, 2015</td><td>14.28%<span class="bar"><i style="width:14.28%"></i></span></td><td>Gemini</td><td>137</td><td>596</td><td>4,174</td></tr>
+        <tr><td class="name">Jackson</td><td>December 8, 2023</td><td>3.70%<span class="bar"><i style="width:3.70%"></i></span></td><td>Sagittarius</td><td>35</td><td>154</td><td>1,080</td></tr>
+        <tr><td class="name">Julianna</td><td>October 3, 2025</td><td>1.42%<span class="bar"><i style="width:1.42%"></i></span></td><td>Libra</td><td>13</td><td>59</td><td>415</td></tr>
+        <tr><td class="name">Josette</td><td>January 23, 2026</td><td>1.04%<span class="bar"><i style="width:1.04%"></i></span></td><td>Aquarius</td><td>9</td><td>43</td><td>303</td></tr>
+        <tr><td class="name">Stephanie</td><td>August 9, 1969</td><td>71.61%<span class="bar"><i style="width:71.61%"></i></span></td><td>Leo</td><td>687</td><td>2,989</td><td>20,924</td></tr>
+        <tr><td class="name">Blaze (dog)</td><td>December 25, 2017</td><td>77.95%<span class="bar"><i style="width:77.95%"></i></span></td><td>Capricorn</td><td>742</td><td>3,248</td><td>22,778</td></tr>
+    </tbody>
+  </table></div>
+  <p class="src">Anchor check for 2026-07-10: Jerrod = 45.20% / 13,207 / 1,886 / 433 (pct / days / weeks / months) — matches the spec exactly.</p>
+</section>
+
+<section aria-labelledby="h-keystone">
+  <div class="sh"><div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="7.5"/><path d="M12 9v4l2.5 2.5M9.5 2.5h5M12 2.5v3"/></svg></div>
+  <div><h2 id="h-keystone">Keystone Countdown</h2><div class="kicker">Next up: Jackson&#x27;s birthday Dec 8 · wedding Mar 5, 2027</div></div></div>
+  <div class="keystone">
+    <div class="callout"><b>Jackson&#x27;s Birthday · December 8, 2026</b><div class="count"><span class="num">16</span><span class="unit">days to go</span></div><p>Jackson turns 3. Cake logistics should start before the 8th.</p></div>
+    <div class="callout"><b>5-Year Home Ownership · March 3, 2027</b><div class="count"><span class="num">101</span><span class="unit">days to go</span></div><p>Five years of mortgage-fueled memories.</p></div>
+    <div class="callout"><b>Jacob &amp; Kelly Wedding · March 5, 2027</b><div class="count"><span class="num">103</span><span class="unit">days to go</span></div><p>Two days after the house anniversary, so plan the champagne budget accordingly.</p></div>
+  </div>
+</section>
+
+<section aria-labelledby="h-ff">
+  <div class="sh"><div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="9" ry="5.5" transform="rotate(-30 12 12)"/><path d="M8.5 14.5l7-5M10 9.5l4 5"/></svg></div>
+  <div><h2 id="h-ff">Fantasy Football · Tailgate Tiffs</h2><div class="kicker">ESPN league 661620427 · Week 11 standings (by playoff seed)</div></div></div>
+  <div class="tbl"><table>
+    <thead><tr><th>Seed</th><th>Team</th><th>W-L</th><th>PF</th><th>PA</th></tr></thead>
+    <tbody><tr><td>1</td><td class="name">LOS VATOS</td><td>7-2</td><td>1157.6</td><td>951.2</td></tr><tr><td>2</td><td class="name">Sunday Sass Kiss My</td><td>6-2</td><td>991.4</td><td>922.6</td></tr><tr><td>3</td><td class="name">End Zone Party II</td><td>6-3</td><td>1213.9</td><td>984.9</td></tr><tr><td>4</td><td class="name">Unky J</td><td>5-4</td><td>1229.9</td><td>1017.1</td></tr><tr><td>5</td><td class="name">The Stoppable Force</td><td>3-6</td><td>808.0</td><td>1000.9</td></tr><tr><td>6</td><td class="name">Hairless Twigs</td><td>2-6</td><td>770.5</td><td>917.6</td></tr><tr><td>7</td><td class="name">lil mega knights</td><td>1-7</td><td>624.7</td><td>1001.6</td></tr></tbody>
+  </table></div>
+  <div class="callout">
+    <p><b>Throne room:</b> LOS VATOS sits at #1 with a 7-2 record and 1157.6 points scored. Take a bow; the rest of this league is eating your dust.</p>
+    <p><b>Basement dweller:</b> lil mega knights is 1-7 with just 624.7 points scored all season, roughly 600 fewer than the leaders. That is not a fantasy team, that is a cry for help. Bench the whole roster and start over.</p>
+  </div>
+  <p class="src">Source: <a href="https://fantasy.espn.com/football/league/standings?leagueId=661620427">ESPN Fantasy standings</a> via ESPN fantasy API, fetched 2026-11-22 (standings updated by ESPN as of the latest scoring period).</p>
+</section>
+
+<section aria-labelledby="h-otd">
+  <div class="sh"><div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg></div>
+  <div><h2 id="h-otd">On This Day</h2><div class="kicker">November 22, 1963</div></div></div>
+  <p><b>JFK is assassinated in Dallas.</b> President John F. Kennedy was shot while riding in a motorcade through Dealey Plaza and died at Parkland Hospital; Lyndon B. Johnson was sworn in aboard Air Force One that afternoon.</p>
+  <p class="src"><a href="https://en.wikipedia.org/wiki/Assassination_of_John_F._Kennedy">Read more: Assassination of John F. Kennedy (Wikipedia)</a></p>
+</section>
+
+<section aria-labelledby="h-quotes">
+  <div class="sh"><div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 17c-1-1-1.5-2.3-1.5-3.8C3.5 10 5.6 7.5 9 6.5l.5 1.2C7.7 8.6 7 9.8 7 11h2.5v6zM14.5 17c-1-1-1.5-2.3-1.5-3.8 0-3.2 2.1-5.7 5.5-6.7l.5 1.2c-1.8.9-2.5 2.1-2.5 3.3h2.5v6z"/></svg></div>
+  <div><h2 id="h-quotes">Hero Quotes</h2><div class="kicker">Today&#x27;s draw: Viktor Frankl and a Nobel laureate (Richard Feynman)</div></div></div>
+  <div class="quotes">
+    <figure class="quote"><blockquote>“Everything can be taken from a man but one thing: the last of the human freedoms—to choose one’s attitude in any given set of circumstances, to choose one’s own way.”</blockquote><figcaption>— Viktor E. Frankl, <i>Man’s Search for Meaning</i> (1946; memoir of surviving Nazi concentration camps)</figcaption></figure>
+    <figure class="quote"><blockquote>“I think that I can safely say that nobody understands quantum mechanics.”</blockquote><figcaption>— Richard Feynman (Nobel Prize in Physics, 1965), from <i>The Character of Physical Law</i> lectures (1964–65)</figcaption></figure>
+  </div>
+</section>
+
+<section aria-labelledby="h-wx">
+  <div class="sh"><div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="9" r="3.5"/><path d="M9 2v1.5M2 9h1.5M4 4l1 1M14 4l-1 1M8 20h9a3.5 3.5 0 0 0 0-7 5 5 0 0 0-9.4 1.6A2.7 2.7 0 0 0 8 20z"/></svg></div>
+  <div><h2 id="h-wx">Kansas City Weather</h2><div class="kicker">66106 · Kansas City, KS</div></div></div>
+  <div class="stats">
+    <div class="stat"><span class="k">Today's high</span><span class="v warm">50°F</span></div>
+    <div class="stat"><span class="k">Tonight's low</span><span class="v">29°F</span></div>
+    <div class="stat"><span class="k">Chance of rain</span><span class="v">18%</span></div>
+    <div class="stat"><span class="k">Right now</span><span class="v">46° cloudy</span></div>
+  </div>
+  <p>A cold front clears the early-morning showers and we turn mostly sunny but much colder: high near 50 with a gusty north-northwest wind, dropping to 29 tonight. Thanksgiving week stays dry and chilly, with highs in the 40s and lows in the mid-20s, then a warm-up to the mid-50s by Saturday.</p>
+  <div class="alert none"><b>Alerts:</b> None in effect</div>
+  <div class="tbl wxw"><table class="wx" aria-label="Seven-day outlook">
+    <thead><tr><th scope="col" class="rowh">7-day outlook</th><th scope="col">SUN</th><th scope="col">MON</th><th scope="col">TUE</th><th scope="col">WED</th><th scope="col">THU</th><th scope="col">FRI</th><th scope="col">SAT</th></tr></thead>
+    <tbody>
+      <tr><th scope="row" class="rowh"><span class="sw sw-hi"></span>High <small>°F</small></th><td class="hi">50°</td><td class="hi">45°</td><td class="hi">41°</td><td class="hi">43°</td><td class="hi">45°</td><td class="hi">49°</td><td class="hi">55°</td></tr>
+      <tr><th scope="row" class="rowh"><span class="sw sw-lo"></span>Low <small>°F</small></th><td class="lo">29°</td><td class="lo">27°</td><td class="lo">24°</td><td class="lo">25°</td><td class="lo">26°</td><td class="lo">32°</td><td class="lo">35°</td></tr>
+      <tr><th scope="row" class="rowh"><span class="sw sw-pc"></span>Rain chance <small>%</small></th><td class="pc">18%</td><td class="pc">0%</td><td class="pc">0%</td><td class="pc">0%</td><td class="pc">1%</td><td class="pc">5%</td><td class="pc">0%</td></tr>
+    </tbody>
+  </table></div>
+  <p class="src"><a href="https://api.weather.gov/gridpoints/EAX/39,49/forecast">NWS Kansas City/Pleasant Hill forecast</a> (updated 2026-11-22 02:06 CST), conditions from KMKC observation at 03:55 CST.</p>
+</section>
+
+<section aria-labelledby="h-gas">
+  <div class="sh"><div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v15M3 20h12M4 10h10M14 8l3 2v7a1.5 1.5 0 0 0 3 0V9l-3-3"/></svg></div>
+  <div><h2 id="h-gas">Gas Prices</h2><div class="kicker">Regular unleaded · KC metro, Kansas side</div></div></div>
+  <div class="stats">
+    <div class="stat"><span class="k">Per gallon</span>
+      <span class="v-row"><span class="v warm">$3.50</span><span class="trend down" title="Down 12 cents from last week">▼</span></span>
+      <span class="delta down">−$0.12 vs last week ($3.62)</span>
+    </div>
+    <div class="stat"><span class="k">14-gal fill-up</span><span class="v">$49.01</span></div>
+    <div class="stat"><span class="k">Kansas avg</span><span class="v">$3.42</span></div>
+    <div class="stat"><span class="k">U.S. avg</span><span class="v">$3.64</span></div>
+  </div>
+  <p>A 14-gallon fill-up at the KCK average runs about $49.01, roughly 14 cents a gallon under the national average.</p>
+  <p class="src">AAA, as of Nov 22, 2026 ($3.5005 × 14 gal; Kansas City, KS metro; week-ago $3.6250). <a href="https://gasprices.aaa.com/?state=KS">gasprices.aaa.com</a></p>
+</section>
+
+<section aria-labelledby="h-wotd">
+  <div class="sh"><div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5.5C4 4.7 4.7 4 5.5 4H11v15H5.5C4.7 19 4 18.3 4 17.5zM20 5.5c0-.8-.7-1.5-1.5-1.5H13v15h5.5c.8 0 1.5-.7 1.5-1.5z"/></svg></div>
+  <div><h2 id="h-wotd">Word of the Day</h2><div class="kicker">Merriam-Webster · November 22, 2026</div></div></div>
+  <img src="https://prod.cdn-mw.com/assets/mw/word-of-the-day/social/08942575edab0657dc0f578f71f76026.jpg" alt="Merriam-Webster Word of the Day graphic for copacetic" style="max-width:100%;border-radius:10px">
+  <p><b>copacetic</b> <i>(adjective)</i> · /koh-puh-SET-ik/</p>
+  <audio controls preload="none" src="https://media.merriam-webster.com/audio/prons/en/us/mp3/c/copace01.mp3">Your browser does not support audio playback.</audio>
+  <p><b>Definition:</b> very satisfactory; fine, as it should be.</p>
+  <p><b>Example:</b> “Worry not: I assure you that everything’s copacetic.”</p>
+  <p><b>In context:</b> “It won’t be as cool as the March eclipse, but the timing will be a lot more copacetic.” — Phil Plait, Scientific American, 9 Jan. 2026</p>
+  <p class="src">Origin remains obscure; first known use 1919. Source: <a href="https://www.merriam-webster.com/word-of-the-day/">Merriam-Webster Word of the Day</a>.</p>
+</section>
+
+<section aria-labelledby="h-local">
+  <div class="sh"><div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg></div>
+  <div><h2 id="h-local">Local Headlines</h2><div class="kicker">Kansas City, last day or so</div></div></div>
+  <div class="news">
+    <article>
+      <h3>Third death since May at Jackson County&#x27;s new $300M detention center</h3>
+      <p>Jail staff found two inmates unconscious in a cell around 7 a.m. Friday; one died and the other was hospitalized and returned to custody. The Highway Patrol is investigating.</p>
+      <p class="src">KC Star · Nov 21 · <a href="https://www.kansascity.com/news/local/article318189844.html">Read story</a></p>
+    </article>
+    <article>
+      <h3>Shelter KC gives Thanksgiving meal boxes to about 100 Kansas City families</h3>
+      <p>Women in the shelter&#x27;s recovery program walked the neighborhood to invite families to a Saturday box giveaway of stuffing, yams, cranberry sauce and gravy. It was the third year for the event.</p>
+      <p class="src">KCTV5 · Nov 21 · <a href="https://www.kctv5.com/2026/11/21/shelter-kc-gives-thanksgiving-meal-boxes-about-100-kansas-city-families/">Read story</a></p>
+    </article>
+    <article>
+      <h3>Basehor man killed in early morning crash on I-435</h3>
+      <p>FOX4 reported that a 33-year-old Basehor man died after his pickup struck a bridge wall on southbound I-435 near Wolcott Drive, rolled into a creek and caught fire.</p>
+      <p class="src">FOX4 · Nov 21 · <a href="https://fox4kc.com/news/basehor-man-killed-in-early-morning-crash-on-i-435/">Read story</a></p>
+    </article>
+  </div>
+</section>
+
+<section aria-labelledby="h-nat">
+  <div class="sh"><div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21v-9M9.5 21v-9M14.5 21v-9M19 21v-9M3 12h18L12 4z"/></svg></div>
+  <div><h2 id="h-nat">National Update</h2><div class="kicker">Shutdown deadline Dec. 11, Thanksgiving recess underway</div></div></div>
+  <h3>From C-SPAN</h3>
+  <ul class="plain">
+    <li><a href="https://www.c-span.org/program/washington-journal/scott-macfarlane-discusses-the-trump-xi-putin-meeting-previews-whats-ahead-in-congress/688168">Scott MacFarlane Discusses the Trump-Xi-Putin Meeting &amp; Previews What&#x27;s Ahead in Congress</a></li>
+    <li><a href="https://www.c-span.org/program/washington-journal/daryl-kimball-discusses-trump-xi-putin-talks-and-future-of-nuclear-arms-control/688207">Daryl Kimball Discusses Trump-Xi-Putin Talks and Future of Nuclear Arms Control</a></li>
+    <li><a href="https://www.c-span.org/event/public-affairs-event/president-trump-chinese-president-xi-and-russian-president-putin-hold-trilateral-meeting/449653">President Trump, Chinese President Xi and Russian President Putin Hold Trilateral Meeting</a></li>
+  </ul>
+  <div class="callout">
+    <p><b>Congress:</b> Congress is out for the <b>Thanksgiving recess</b> and returns with only about 10 session days before the <b>Dec. 11</b> funding deadline. A short stopgap spending bill (CR) is the most likely path. Senate Democrats are weighing amendments to cut off funds for offensive operations in the Iran war, and Republicans have shelved a partisan military-funding bill to try bipartisan talks. The Senate passed a permitting-reform bill last week.</p>
+    <p><b>Courts:</b> The Supreme Court has no arguments this week; the December session starts Nov. 30, with an AR-15 ban case (<i>Viramontes v. Cook County</i>) set for Dec. 2. Last week the justices turned away dozens of petitions and the administration pulled its Venezuelan TPS emergency request. In Brooklyn federal court, the <i>Huawei</i> racketeering jury was still deliberating as of Nov. 19 after a two-month trial.</p>
+  </div>
+  <p class="src">Sources: <a href="https://www.c-span.org/">C-SPAN</a> (site blocks direct fetch; headlines and links taken from search results), <a href="https://thehill.com/homenews/senate/6229008-congress-faces-government-shutdown-deadline/">The Hill</a>, <a href="https://www.ms.now/news/lawmakers-running-out-of-time-government-shutdown">MS NOW</a>, <a href="https://www.scotusblog.com/2026/11/trump-administration-brings-climate-grant-dispute-to-scotus/">SCOTUSblog</a>, <a href="https://www.scmp.com/news/us/article/3374967/huawei-case-enters-jury-deliberations-after-2-month-battle-us-courtroom">SCMP</a>.</p>
+</section>
+
+<section aria-labelledby="h-bb">
+  <div class="sh"><div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg></div>
+  <div><h2 id="h-bb">Billboard Hot 100 Top 10</h2><div class="kicker">Chart dated Nov 21, 2026 (latest posted; next chart drops Tuesday)</div></div></div>
+  <ol class="chart">
+    <li><span class="rk">1</span><span class="song"><b>Choosin&#x27; Texas</b><span>Ella Langley</span></span><span class="mv eq" title="No change">—</span></li>
+    <li><span class="rk">2</span><span class="song"><b>Boston</b><span>Stella Lefty</span></span><span class="mv up" title="Up 3 spots">▲3</span></li>
+    <li><span class="rk">3</span><span class="song"><b>Dracula</b><span>Tame Impala &amp; JENNIE</span></span><span class="mv eq" title="No change">—</span></li>
+    <li><span class="rk">4</span><span class="song"><b>Housewife</b><span>Tate McRae</span></span><span class="mv eq" title="No change">—</span></li>
+    <li><span class="rk">5</span><span class="song"><b>Stupid Song</b><span>Olivia Rodrigo</span></span><span class="mv up" title="Up 5 spots">▲5</span></li>
+    <li><span class="rk">6</span><span class="song"><b>BbY WOW</b><span>Karol G With Judeline &amp; rusowsky</span></span><span class="mv up" title="Up 2 spots">▲2</span></li>
+    <li><span class="rk">7</span><span class="song"><b>Nicole Kidman</b><span>ADELA</span></span><span class="mv eq" title="No change">—</span></li>
+    <li><span class="rk">8</span><span class="song"><b>Hate That I Made You Love Me</b><span>Ariana Grande</span></span><span class="mv up" title="Up 1 spot">▲1</span></li>
+    <li><span class="rk">9</span><span class="song"><b>Been By Now</b><span>Morgan Wallen</span></span><span class="mv dn" title="Down 3 spots">▼3</span></li>
+    <li><span class="rk">10</span><span class="song"><b>Patient Zero</b><span>Taylor Swift</span></span><span class="mv up" title="Up 1 spot">▲1</span></li>
+  </ol>
+  <p class="src">Source: <a href="https://www.billboard.com/charts/hot-100/">Billboard Hot 100</a>. “Choosin' Texas” is in its 28th week at No. 1.</p>
+</section>
+
+<section aria-labelledby="h-stars">
+  <div class="sh"><div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.5 6.7 19.4l1.2-6L3.4 9.3l6-.7z"/></svg></div>
+  <div><h2 id="h-stars">Horoscope Clashes &amp; Symmetries</h2><div class="kicker">Relationship forecast for the whole crew</div></div></div>
+  <div class="signs">
+    <div class="sign"><span class="who">Jerrod · Taurus</span><p>Jerrod, Taurus: seek out spontaneous affection and respond to the small gesture your partner makes; don&#x27;t dismiss it.</p></div>
+    <div class="sign"><span class="who">Crystal · Virgo</span><p>Crystal, Virgo: let the other person talk first today. Your quiet presence will say more than your explanations.</p></div>
+    <div class="sign"><span class="who">Jacob &amp; Josette · Aquarius</span><p>Jacob and Josette, Aquarius: a shift in attitude changes the inner landscape. Release tension, go at your own pace, and your companion will follow your gentle lead.</p></div>
+    <div class="sign"><span class="who">Joshua · Aries</span><p>Joshua, Aries: a simple, honest remark gets the day off right, and a casual message could turn into more than friendship.</p></div>
+    <div class="sign"><span class="who">Jayden · Gemini</span><p>Jayden, Gemini: a positive word brightens your day; if someone has something troubling on their mind, just listen.</p></div>
+    <div class="sign"><span class="who">Jackson · Sagittarius</span><p>Jackson, Sagittarius: you won&#x27;t find love clarity by asking. Be there in silence and let understanding arrive on its own.</p></div>
+    <div class="sign"><span class="who">Julianna · Libra</span><p>Julianna, Libra: a little candid honesty pulls hearts closer today, and honest talk can rekindle the fire.</p></div>
+    <div class="sign"><span class="who">Stephanie · Leo</span><p>Stephanie, Leo: speak it, don&#x27;t just think it. Say how you feel out loud and let your heart lead the day.</p></div>
+    <div class="sign"><span class="who">Blaze · Capricorn</span><p>Blaze, Capricorn: not everything about love has to be grand; quiet company is the move today. Be there, don&#x27;t rush anything, and expect the belly rubs to follow.</p></div>
+  </div>
+  <div class="callout">
+    <p><b>Clash to watch:</b> Stephanie (Leo) is told to say everything out loud while Crystal (Virgo), Jackson (Sagittarius) and Blaze (Capricorn) are told that silence and quiet company do the talking. Expect a loud Leo and a lot of quiet people in one room.</p>
+    <p><b>Symmetry:</b> Jackson, Crystal and Blaze all get the same message to be present and quiet, while Joshua, Julianna and Stephanie (Aries, Libra, Leo) all get the honesty-first, say-it-plainly advice.</p>
+    <p><b>Also in the stars:</b> Blaze&#x27;s day is basically a nap on someone&#x27;s feet. Jerrod gets the small-gestures forecast, so a good moment to hand Blaze the leftovers.</p>
+    <p class="closing">Say the honest thing, sit with the people you love, and let the small moments carry the day.</p>
+  </div>
+  <p class="src">Source: <a href="https://timesofindia.indiatimes.com/astrology/horoscope/love-horoscope-today-november-22-2026-what-the-stars-say-about-your-love-life/articleshow/136061942.cms">Times of India love horoscope, Nov 22, 2026</a> (paraphrased).</p>
+</section>
+
+<section aria-labelledby="h-log" class="logbox">
+  <div class="sh"><div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9l3 3-3 3M12 15h5"/></svg></div>
+  <div><h2 id="h-log">System Log</h2><div class="kicker">Run audit · overall health YELLOW, 13/13 tasks complete</div></div></div>
+  <button class="toggle" id="logToggle" type="button" aria-expanded="false" aria-controls="logBody">Show System Log</button>
+  <pre class="log" id="logBody" hidden>=== KC DAILY NEWS BRIEFING LOG · 2026-11-22 · tz America/Chicago · started 2026-11-22T10:33:49Z ===
+
+[TASK 01 — DATE HEADER]
+date_long: Sunday, November 22, 2026
+utc_time: 10:33
+julian_day: 2461366.94
+day_of_year: 326 of 365
+roman_date: XXII · XI · MMXXVI
+state_file: ./state/run-state.json written
+status: OK
+
+[TASK 02 — FAMILY FUN]
+method: python script, roster DOBs from spec/template, no web lookups; % assumes life of 80 years
+blaze_rule: dog, x7 on days, weeks, months, and % lived (% capped at 100)
+anchor_check: Jerrod @2026-07-10 = 45.20% / 13,207 / 1,886 / 433 -&gt; MATCH
+  Jerrod: 45.66% · 13,342 d · 1,906 w · 438 mo
+  Jacob: 40.99% · 11,976 d · 1,710 w · 393 mo
+  Joshua: 27.04% · 7,902 d · 1,128 w · 259 mo
+  Crystal: 46.48% · 13,582 d · 1,940 w · 446 mo
+  Jayden: 14.28% · 4,174 d · 596 w · 137 mo
+  Jackson: 3.70% · 1,080 d · 154 w · 35 mo
+  Julianna: 1.42% · 415 d · 59 w · 13 mo
+  Josette: 1.04% · 303 d · 43 w · 9 mo
+  Stephanie: 71.61% · 20,924 d · 2,989 w · 687 mo
+  Blaze: 77.95% · 22,778 d · 3,248 w · 742 mo
+notes: roster follows template (10 entries). Spec roster also lists Kelly, Ed, Terry, but the template has no slots for them and the run instructions omit them; Julianna spelled per template.
+status: OK
+
+[TASK 02b — KEYSTONE]
+birthdays_next_30_days: Jackson 2026-12-08 (16 days)
+jacob_kelly_wedding_2027-03-05: 103 days
+home_ownership_5yr_2027-03-03: 101 days
+method: python date arithmetic vs current_date
+status: OK
+
+[TASK 02c — FANTASY FOOTBALL]
+source: ESPN fantasy API (lm-api-reads.fantasy.espn.com, leagueId=661620427, season 2026, mTeam+mStandings), HTTP 200
+current_matchup_period: 11
+top: LOS VATOS 7-2
+bottom: lil mega knights 1-7
+standings: 1. LOS VATOS 7-2; 2. Sunday Sass Kiss My 6-2; 3. End Zone Party II 6-3; 4. Unky J 5-4; 5. The Stoppable Force 3-6; 6. Hairless Twigs 2-6; 7. lil mega knights 1-7
+notes: template had no fantasy section; added new section after Keystone. League shows 7 teams joined.
+status: OK
+
+[TASK 03a — ON THIS DAY]
+event: Nov 22, 1963 — JFK assassinated in Dallas
+url: https://en.wikipedia.org/wiki/Assassination_of_John_F._Kennedy (HTTP 200 verified); date index page https://en.wikipedia.org/wiki/November_22 retrieved
+status: OK
+
+[TASK 03b — HERO QUOTES]
+random_draw: SystemRandom.sample of list minus Adolf Hitler (per owner rule) -&gt; Viktor Frankl, Any Nobel Prize Laureates (Nobel pick: Richard Feynman)
+frankl_source: https://www.goodreads.com/quotes/51356-everything-can-be-taken-from-a-man-but-one-thing (text confirmed on page); Man&#x27;s Search for Meaning, 1946
+feynman_source: https://mathshistory.st-andrews.ac.uk/Biographies/Feynman/quotations/ (text confirmed on page); Character of Physical Law, 1964-65
+status: OK
+
+[TASK 04 — WEATHER 66106]
+source: api.weather.gov points 39.0694,-94.7178 -&gt; gridpoint EAX/39,49 forecast, grid data, KMKC latest observation, alerts/active?point=
+forecast_updated: 2026-11-22T08:06:55Z (02:06 CST)
+observation: 2026-11-22T09:55Z 8C -&gt; 46F, Cloudy
+today: high 50, low 29 (tonight), precip 18% (overnight showers before 5am; daytime 2%)
+alerts: none active (NWS API returned empty set)
+d7_note: Saturday low (35F) taken from NWS gridpoint minTemperature (forecast periods end Sat day); Sat precip 0%
+outlook: SUN 50/29 · MON 45/27 · TUE 41/24 · WED 43/25 · THU 45/26 · FRI 49/32 · SAT 55/35
+status: OK
+
+[TASK 05a — GAS PRICES]
+source: https://gasprices.aaa.com/?state=KS (Kansas City, KS only metro), price as of 11/22/26
+regular_now: 3.5005 · yesterday 3.5113 · week_ago 3.6250
+trend: down, -0.1245 vs last week -&gt; displayed −$0.12
+fill_14: 49.0070 (script)
+kansas_avg: 3.4171 · us_avg: 3.6448
+status: OK
+
+[TASK 05b — WORD OF THE DAY]
+source: https://www.merriam-webster.com/word-of-the-day/ (WebFetch; direct curl got 403) + https://www.merriam-webster.com/dictionary/copacetic
+word: copacetic (adjective) koh-puh-SET-ik
+audio: https://media.merriam-webster.com/audio/prons/en/us/mp3/c/copace01.mp3 (HTTP 200 audio/mpeg verified via HEAD; URL pattern from MW audio CDN, not scraped from page)
+image: https://prod.cdn-mw.com/assets/mw/word-of-the-day/social/08942575edab0657dc0f578f71f76026.jpg (page image from retrieved WOTD page, HTTP 200)
+status: OK
+
+[TASK 06 — LOCAL HEADLINES]
+sources used: kansascity.com, kctv5.com, fox4kc.com (all on allowed list)
+1. KC Star — jail death — https://www.kansascity.com/news/local/article318189844.html — Nov 21 (full text retrieved)
+2. KCTV5 — Shelter KC — https://www.kctv5.com/2026/11/21/shelter-kc-gives-thanksgiving-meal-boxes-about-100-kansas-city-families/ — Nov 21 (full text retrieved)
+3. FOX4 — I-435 crash — https://fox4kc.com/news/basehor-man-killed-in-early-morning-crash-on-i-435/ — Nov 21 (summary from search snippet only; article body not opened)
+notes: no engagement metrics available; picked by prominence and recency.
+status: OK
+
+[TASK 07 — NATIONAL UPDATE]
+c-span: https://www.c-span.org/ returned 403 to direct fetch (WebFetch and curl). Three c-span.org URLs (688168, 688207, event/449653) come from web search results with titles, not page fetches.
+congress sources: The Hill, MS NOW (Nov 20), EY What to Expect, Politico Inside Congress
+courts sources: SCOTUSblog Nov 20; Huawei trial via SCMP/MLex search results (latest status Nov 19, may be stale; verdict not confirmed)
+status: OK-WITH-NOTES (c-span unreachable directly; Huawei trial status possibly outdated)
+
+[TASK 08 — BILLBOARD TOP 10]
+source: https://www.billboard.com/charts/hot-100/ — Week of November 21, 2026 (latest)
+1. Choosin&#x27; Texas — Ella Langley (LW 1)
+2. Boston — Stella Lefty (LW 5)
+3. Dracula — Tame Impala &amp; JENNIE (LW 3)
+4. Housewife — Tate McRae (LW 4)
+5. Stupid Song — Olivia Rodrigo (LW 10)
+6. BbY WOW — Karol G With Judeline &amp; rusowsky (LW 8)
+7. Nicole Kidman — ADELA (LW 7)
+8. Hate That I Made You Love Me — Ariana Grande (LW 9)
+9. Been By Now — Morgan Wallen (LW 6)
+10. Patient Zero — Taylor Swift (LW 11)
+status: OK
+
+[TASK 09 — HOROSCOPE &amp; CLOSING]
+source: Times of India Love Horoscope Today Nov 22, 2026 (all signs, relationship-focused) — https://timesofindia.indiatimes.com/astrology/horoscope/love-horoscope-today-november-22-2026-what-the-stars-say-about-your-love-life/articleshow/136061942.cms
+clashes/symmetries: Leo (say it loud) vs Virgo/Sagittarius/Capricorn (quiet); Sag/Virgo/Capricorn mirror each other; Aries/Libra/Leo honesty trio
+notes: Aquarius advice shared by Jacob &amp; Josette per template card; paraphrased, not quoted
+status: OK
+
+[TASK 10 — RUN AUDIT]
+tasks_completed: 13/13
+missing_stages: none
+unfilled_placeholders_before_syslog: none
+overall_health: YELLOW
+notes: (1) c-span.org returned 403 to direct fetch; its 3 links/titles came from search results. (2) Local story 3 (FOX4) based on search snippet only. (3) Huawei trial status as of Nov 19, verdict unconfirmed. (4) Spec roster lists Kelly, Ed, Terry; template/run instructions omit them, so they were left out; Juliana spelled Julianna per template. (5) Fantasy section (02c) added to template after Keystone; WOTD section inserted before Local Headlines. (6) Log blocks were written at the end of the run in task order rather than appended live. (7) WX today low uses tonight&#x27;s 29F; Sat low from NWS grid data. (8) Gas uses KC KS metro price.
+suggestions: add a c-span RSS/alternate source; add Kelly/Ed/Terry rows to template or drop from spec; add fantasy and WOTD placeholders to template; append log live.
+finished_utc: 2026-11-22T10:37:15Z
+</pre>
+</section>
+
+<footer>▰▰▰ [ FL0B0T | 📅 ] ▰▰▰ · 2026-11-22</footer>
+</div>
+<script>
+(function(){var b=document.getElementById('logToggle'),l=document.getElementById('logBody');
+b.addEventListener('click',function(){var o=l.hidden;l.hidden=!o;b.setAttribute('aria-expanded',String(o));b.textContent=o?'Hide System Log':'Show System Log';});})();
+</script>
 </body>
 </html>
